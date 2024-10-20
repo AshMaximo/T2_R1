@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Escribe un programa que pida una frase y escriba cuántas veces aparecen cada una de las vocales-->
+    <script>
+      let frase = prompt("Ingresa una frase:").toLowerCase();
+      let contadorVocales = {
+        a: 0,
+        e: 0,
+        i: 0,
+        o: 0,
+        u: 0,
+      };
+      for (let i = 0; i < frase.length; i++) {
+        let letra = frase[i];
+        if (contadorVocales.hasOwnProperty(letra)) {
+          contadorVocales[letra]++;
+        }
+      }
+      document.write("Conteo de vocales:");
+      document.write(`A: ${contadorVocales.a}`);
+      document.write(`E: ${contadorVocales.e}`);
+      document.write(`I: ${contadorVocales.i}`);
+      document.write(`O: ${contadorVocales.o}`);
+      document.write(`U: ${contadorVocales.u}`);
+    </script>
+  </body>
+</html>

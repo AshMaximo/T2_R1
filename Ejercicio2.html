@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <!--Crea un programa que pida por parámetro tu cumpleaños en este formato YYYY-MM-DD
+    , y muestre usando la consola de depuración del navegador todos los años en los que 
+    tu cumpleaños cae en domingo, hasta el año 2100.-->
+    <script>
+      //función que verifica los años en los que el cumpleaños cae en domingo
+      function encontrarCumpleanosDomingo() {
+        //pediremos que ingrese su cumpleaños
+        let fechaCumpleanos = prompt(
+          "Ingresa tu cumpleaños en el formato YYYY-MM-DD:"
+        );
+        //convertiremos la fecha de cumpleaños a un objeto Date
+        const cumpleanos = new Date(fechaCumpleanos);
+        //verificaremos que la fecha de cumpleaños sea válida
+        if (isNaN(cumpleanos)) {
+          console.error(
+            "Ingresa una fecha válida en el formato YYYY-MM-DD."
+          );
+          return;
+        }
+        //obtendremos el año de la fecha de cumpleaños
+        let añoCumpleanos = cumpleanos.getFullYear();
+        //iteraremos desde el año de cumpleaños hasta el 2100
+        for (let año = añoCumpleanos; año <= 2100; año++) {
+          //creamos una nueva fecha para el cumpleaños en el año actual
+          let cumpleanosEnAño = new Date(
+            año,
+            cumpleanos.getMonth(),
+            cumpleanos.getDate()
+          );
+          //verificar si es domingo (0 = domingo)
+          if (cumpleanosEnAño.getDay() === 0) {
+            document.write(
+              `El ${cumpleanosEnAño.toDateString()} cae en domingo.</br>`
+            );
+          }
+        }
+      }
+      //llamaremos a la funcion para que inicie
+      encontrarCumpleanosDomingo();
+    </script>
+  </body>
+</html>

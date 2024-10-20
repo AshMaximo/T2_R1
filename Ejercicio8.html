@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <!--Escribe un programa que pida introducir una frase y escriba cuantas veces aparece la letra a.-->
+    <script>
+      let frase = prompt("Introduce una frase:");
+      //contaremos cuántas veces aparece la letra "a"
+      let letra = "a";
+      let contador = 0;
+      //recorreremos cada carácter de la frase
+      for (let i = 0; i < frase.length; i++) {
+        if (frase[i].toLowerCase() === letra) {
+          //convertir a minúscula para contar 'A' y 'a'
+          contador++;
+        }
+      }
+      //mostraremos el resultado en pantalla
+      document.write(`La letra "a" aparece ${contador} veces en la frase.`);
+    </script>
+  </body>
+</html>

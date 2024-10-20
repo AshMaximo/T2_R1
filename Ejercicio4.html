@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+  </head>
+  <body>
+    <!--Realiza un script que pida un nombre
+     y dos apellidos e indique el tiempo que se tardó en introducir los datos. 
+     La salida sería algo así como: En introducir Juan Torres Lago has tardado 25 segundos.-->
+    <script>
+      let inicio = Date.now();
+      //pedimos el nombre y apellidos al usuario
+      let nombre = prompt("Introduce tu nombre:");
+      let apellido1 = prompt("Introduce tu primer apellido:");
+      let apellido2 = prompt("Introduce tu segundo apellido:");
+      //obtenemos el tiempo de fin
+      let fin = Date.now();
+      //calcular el tiempo transcurrido en segundos
+      let tiempoTranscurrido = Math.round((fin - inicio) / 1000); // Convertir de milisegundos a segundos
+      //creamos el mensaje a enseñar
+      let mensaje = `En introducir ${nombre} ${apellido1} ${apellido2} has tardado ${tiempoTranscurrido} segundos.`;
+      //mostramos el mensaje
+      document.write(mensaje);
+    </script>
+  </body>
+</html>

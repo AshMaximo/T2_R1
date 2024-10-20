@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <!--Crea un programa que muestre el número de días que quedan 
+    desde hoy hasta las vacaciones de Navidad (19 de diciembre).-->
+    <script>
+      //cojemos la fecha actual
+      let hoy = new Date();
+      //hacemos la fecha de 19 diciembre
+      let navidad = new Date(hoy.getFullYear(), 11, 19); // Diciembre es el mes 11 (0-11)
+      //si la fecha de hoy es después del 19 de diciembre, la calculamos para el año que viene
+      if (hoy > navidad) {
+        navidad.setFullYear(navidad.getFullYear() + 1);
+      }
+      //calcular la diferencia en milisegundos
+      let diferencia = navidad - hoy;
+      //convertimos la diferencia a días
+      let diasRestantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+      document.write(
+        `Quedan ${diasRestantes} días hasta las vacaciones de Navidad.`
+      );
+    </script>
+  </body>
+</html>

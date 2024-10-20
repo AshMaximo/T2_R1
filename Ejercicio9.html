@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+  </head>
+  <body>
+    <!--Escribe un programa que pida una frase y escriba cuántas de las letras que tiene son vocales.-->
+    <script>
+      let frase = prompt("Introduce una frase:");
+      let vocales = "aeiouáéíóúAEIOUÁÉÍÓÚ";
+      let contador = 0;
+      for (let i = 0; i < frase.length; i++) {
+        if (vocales.includes(frase[i])) {
+          //comprobaremos si el carácter es una vocal
+          contador++;
+        }
+      }
+      document.write(`La frase contiene ${contador} vocal(es).`);
+    </script>
+  </body>
+</html>

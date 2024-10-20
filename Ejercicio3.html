@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+  </head>
+  <body>
+    <!--Crea un programa que muestre la hora actual en los formatos siguientes:
+    1. 14:35:07 (hora detallada con minutos y segundos)
+    2. Son las 14h y 35m-->
+    <script>
+      let ahora = new Date();
+      //obtener horas, minutos y segundos
+      let horas = ahora.getHours();
+      let minutos = ahora.getMinutes();
+      let segundos = ahora.getSeconds();
+      //forma 1: 14:35:07
+      let formato1 = `${horas.toString().padStart(2, "0")}:${minutos
+        .toString()
+        .padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
+      //forma 2: Son las 14h y 35m
+      let formato2 = `Son las ${horas}h y ${minutos}m`;
+      //mostramos los resultados
+      document.write(`Formato 1: ${formato1}</br>`);
+      document.write(`Formato 2: ${formato2}`);
+    </script>
+  </body>
+</html>
